@@ -50,7 +50,7 @@
 				
 				stu1 = Student.getStudent(student1);
 				stu2 = Student.getStudent(student2);
-				Vector<Vector<Student>> studentTeams = new Vector<>();
+				Vector<Vector<Student>> studentTeams;
 				
 				
 				if (Student.isStudentOnTeam(team, stu1)) {
@@ -67,6 +67,8 @@
 				
 				if (session.getAttribute("teams") != null) {
 					studentTeams = (Vector<Vector<Student>>)session.getAttribute("teams");
+				} else {
+					studentTeams = new Vector<>();
 				}
 				
 				for (Vector<Student> t : studentTeams) {
